@@ -1,0 +1,18 @@
+package advancedMockitoexercise2;
+
+interface RestClient {
+    String getResponse();
+}
+
+class ApiService {
+    private RestClient restClient;
+
+    public ApiService(RestClient restClient) {
+        this.restClient = restClient;
+    }
+
+    public String fetchData() {
+        String response = restClient.getResponse();
+        return "Fetched " + response;
+    }
+}
